@@ -23,10 +23,14 @@ export const FeedPage = () => {
     fetchFeed();
   }, []);
 
-  const handlePostCreated = (newPost) => setPosts([newPost, ...posts]);
+  const handlePostCreated = (newPost) =>
+    setPosts((prevPosts) => [newPost, ...prevPosts]);
   const handlePostUpdated = (updated) =>
-    setPosts(posts.map((p) => (p._id === updated._id ? updated : p)));
-  const handlePostDeleted = (id) => setPosts(posts.filter((p) => p._id !== id));
+    setPosts((prevPosts) =>
+      prevPosts.map((p) => (p._id === updated._id ? updated : p)),
+    );
+  const handlePostDeleted = (id) =>
+    setPosts((prevPosts) => prevPosts.filter((p) => p._id !== id));
 
   return (
     <div className="min-h-screen bg-[#f3f2ef]">
