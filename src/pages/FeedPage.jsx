@@ -39,7 +39,7 @@ export const FeedPage = () => {
         <CreatePostCard onPostCreated={handlePostCreated} />
         {loading ? (
           <p className="text-center text-sm text-gray-500 py-6">
-            Loading feed...
+            Loading feeds...
           </p>
         ) : posts.length === 0 ? (
           <p className="text-center text-sm text-gray-500 py-6">
