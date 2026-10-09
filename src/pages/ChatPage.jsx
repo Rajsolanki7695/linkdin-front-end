@@ -263,6 +263,7 @@ export const ChatPage = () => {
                       >
                         {activePartner.name}
                       </Link>
+
                       <span className="flex items-center gap-1 text-[11px] text-gray-500">
                         <Circle
                           className={`h-2 w-2 fill-current ${
