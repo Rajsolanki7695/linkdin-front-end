@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import {
   Send,
   AlertCircle,
@@ -257,9 +257,12 @@ export const ChatPage = () => {
                       className="h-9 w-9 rounded-full object-cover"
                     />
                     <div>
-                      <h4 className="text-sm font-bold text-gray-900">
+                      <Link
+                        to={`/profile/${activePartner?._id}`}
+                        className="text-sm font-bold text-gray-900"
+                      >
                         {activePartner.name}
-                      </h4>
+                      </Link>
                       <span className="flex items-center gap-1 text-[11px] text-gray-500">
                         <Circle
                           className={`h-2 w-2 fill-current ${

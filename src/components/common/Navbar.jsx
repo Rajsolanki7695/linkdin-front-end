@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Home, MessageSquare, Search, LogOut } from "lucide-react";
+import {
+  Home,
+  MessageSquare,
+  Search,
+  LogOut,
+  UserGroup,
+  BriefcaseBusiness,
+  Bell,
+} from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 
 export const Navbar = () => {
@@ -44,6 +52,27 @@ export const Navbar = () => {
           >
             <Home className="h-5 w-5" />
             <span>Home</span>
+          </Link>
+          <Link
+            to="/"
+            className="flex flex-col items-center text-xs hover:text-black"
+          >
+            <UserGroup className="h-5 w-5" />
+            <span>My Network</span>
+          </Link>
+          <Link
+            to="/"
+            className="flex flex-col items-center text-xs hover:text-black"
+          >
+            <BriefcaseBusiness className="h-5 w-5" />
+            <span>Jobs</span>
+          </Link>
+          <Link
+            to="/"
+            className="flex flex-col items-center text-xs hover:text-black"
+          >
+            <Bell className="h-5 w-5" />
+            <span>Notification</span>
           </Link>
           <Link
             to="/chat"
