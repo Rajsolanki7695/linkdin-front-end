@@ -280,9 +280,11 @@ export const ChatPage = () => {
                   {!canChat ? (
                     <div className="flex flex-col items-center justify-center h-full text-center p-4">
                       <AlertCircle className="h-8 w-8 text-amber-500 mb-2" />
+
                       <p className="text-sm font-medium text-gray-700">
                         {errorMessage}
                       </p>
+
                       <p className="text-xs text-gray-400 mt-1">
                         You must follow this user before sending a direct
                         message.
@@ -299,7 +301,6 @@ export const ChatPage = () => {
                   ) : (
                     messages.map((msg, index) => {
                       const isMe = (msg.sender?._id || msg.sender) === user._id;
-
                       return (
                         <div
                           key={msg._id || index}
